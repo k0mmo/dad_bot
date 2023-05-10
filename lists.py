@@ -10,7 +10,11 @@ help = ('''```####### Interactive Commands #######\n
     Hi dad bot\n
     Ping me daddy!\n
 ```''')
-
+pronouns = [
+  'im',
+  'i am',
+  "i'm"
+]
 
 potty_mouth = ['Fuck you dad bot',
                'fuck you dad bot',

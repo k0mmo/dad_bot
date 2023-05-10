@@ -40,6 +40,7 @@ class MyClient(discord.Client): # connects to discord
 
 
         if str(message.channel) in channels:
+             
             if message.content in ["Hey dad bot if i say ping?", 'hey dad bot if i say ping?']:  # get ponged commands
                 if ask_Mom == ask_Mom_number:
                     await message.channel.send("Go ask your Mother")
@@ -96,6 +97,18 @@ class MyClient(discord.Client): # connects to discord
                 else:
                     if message.content == "I love you dad bot":
                         await message.channel.send("Oh Dad Bot loves you too " + str(random.choice(lists.son_Names) + "!")) # uses this command if use is not in valid_users
+            else:
+            #does the i'm dad joke (eg: im gay, hello gay im dad!)
+                for pronoun in pronouns:
+                    if len(message.content) > 80:
+                      return
+                    if message.content.lower().startswith(pronoun):
+                      msg = message.content.lower().replace('im', '',1)
+                      msg = msg.lower().replace("i'm",'',1)
+                      msg = msg.lower().replace('i am', '',1)
+                      msg = msg.lower().replace('@','')
+                      await message.channel.send('Hello'+ msg + ", I'm Dad!")
+                      return
 
 ####### help commands #######
             elif message.content in ['Hey dad bot show me your commands', 'hey dad bot show me your commands']: # /dad_commands bring up a commited message with the commands used in bot
